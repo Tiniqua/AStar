@@ -10,7 +10,8 @@ void Algorithm::Initialize()
 {
 	PlayState ps;
 	std::vector<Building> buildingList = ps.GetBuildings();
-
+	std::vector<Enemy> enemyList = ps.GetEnemies();
+	Player player = ps.GetPlayerPos();
 
 	TileManager tm;
 	mapHeight = tm.mHeight;
@@ -30,13 +31,16 @@ void Algorithm::Initialize()
 
 			for (auto& b : buildingList)
 			{
-				if (tm.GetTile(x, y).CheckCollision(b.GetPos(),AIChaser.GetPos()) == true)//tile has building or trader)
+				for (auto& e : enemyList)
 				{
-					nodes[y * mapWidth + x].Obstacle = true;
-				}
-				else
-				{
-					nodes[y * mapWidth + x].Obstacle = false;
+					if (tm.GetTile(x, y).CheckCollision(b.GetPos(), e.GetPos()) == true)//tile has building or trader)
+					{
+						nodes[y * mapWidth + x].Obstacle = true;
+					}
+					else
+					{
+						nodes[y * mapWidth + x].Obstacle = false;
+					}
 				}
 			}
 			

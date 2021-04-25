@@ -153,6 +153,8 @@ public:
 	}
 
 	std::vector<Building> GetBuildings();
+	std::vector<Enemy> GetEnemies();
+	Player GetPlayerPos();
 
 	void InventoryUp();
 	void InventoryDown();

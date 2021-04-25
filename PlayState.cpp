@@ -16,6 +16,16 @@ std::vector<Building> PlayState::GetBuildings()
 	return mBuildings;
 }
 
+std::vector<Enemy> PlayState::GetEnemies()
+{
+	return mEnemies;
+}
+
+Player PlayState::GetPlayerPos()
+{
+	return mPlayer;
+}
+
 void PlayState::InitializeBuildings()
 {
 	mBuildings.reserve(3);

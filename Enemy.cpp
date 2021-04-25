@@ -1,5 +1,6 @@
 #include "Enemy.h"
 #include "GameApp.h"
+#include "AStar.h"
 
 void Enemy::SetHealth(int health) {
 	mHealth = health;
