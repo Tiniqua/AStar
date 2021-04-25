@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameApp" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQUMiGCKwAMkAwHlYKRgVQACIBDAAgALOEIh0ABCAiA=</HashCode>
+      <FileName>GameApp.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mStateManager" />
+      <Field Name="mCamera" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StateManager" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAQBkBAAAAAAAAAAACAAAAAAAACAAAACAA=</HashCode>
+      <FileName>State.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Camera" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYQGiMAABiAAGJEAZAAAAQCAwAICogBggAFBSIAgAgI=</HashCode>
+      <FileName>Common\Camera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
