@@ -32,7 +32,9 @@ class TileManager
 	std::vector<std::vector<mapData>> mMapData;
 	const float mUnitSize = 1.0f;
 	TileGid  mTileGrid;
-	
+	const float mWidth = 30.0f;
+	const float mHeight = 30.0f;
+	const float mDepth = 30.0f;
 	const float x = -0.5f*mWidth;
 	const float z = -0.5f*mDepth;
 	const float dx = mWidth / (mDimention - 1);
@@ -78,9 +80,8 @@ class TileManager
 	int H3RandomDist = 3; // distance from regular gen / slip - ADVANCED GENERATION
 
 public:
-	const float mWidth = 30.0f;
-	const float mHeight = 30.0f;
-	const float mDepth = 30.0f;
+	const float Width = mWidth;
+	const float Height = mHeight;
 	int MaxGen;
 	void Initialize();
 	void Update(const GameTimer& gt);

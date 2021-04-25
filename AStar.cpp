@@ -14,17 +14,17 @@ void Algorithm::Initialize()
 	Player player = ps.GetPlayerPos();
 
 	TileManager tm;
-	mapHeight = tm.mHeight;
-	mapWidth = tm.mWidth;
+	mapHeight = tm.Height;
+	mapWidth = tm.Width;
 	int mDimention = tm.getDimentions();
 	
-	//nodes = new sNode[mDimention * mDimention]; // pull reference from Tile.H
+	nodes = new sNode[mDimention * mDimention]; // pull reference from Tile.H
 	for (int x = 0; x < mapHeight; x++) // pull reference from GameObject
 	{
 		for (int y = 0; y < mapWidth; y++)
 		{
-			nodes[y * mapWidth + x].x = x;
-			nodes[y * mapWidth + x].y = y;
+			nodes[y * mapWidth + x].x = tm.GetTile(x,y).GetPos().x; // may need x and y swapping
+			nodes[y * mapWidth + x].y = tm.GetTile(x,y).GetPos().y;
 			nodes[y * mapWidth + x].parent = nullptr;
 			nodes[y * mapWidth + x].Visited = false;
 
@@ -62,13 +62,15 @@ void Algorithm::Initialize()
 		}
 	}
 
-	nodeStart = &nodes[(mapHeight / 2) * mapWidth + 1]; // temp start goal will be set to enemy spawn location
-	nodeEnd = &nodes[(mapHeight / 2) * mapWidth + mapWidth - 1]; // temp end goal will be set to player location in update 
+	 
 
 }
 
 void Algorithm::Update()
 {
+	nodeStart = &nodes[(mapHeight / 2) * mapWidth + 1]; // temp start goal will be set to enemy spawn location
+	nodeEnd = &nodes[(mapHeight / 2) * mapWidth + mapWidth - 1]; // temp end goal will be set to player location in update
+
 	if (nodeEnd != nullptr)
 	{
 		sNode* p = nodeEnd;

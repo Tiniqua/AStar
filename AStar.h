@@ -25,6 +25,7 @@ private:
 	sNode *nodeStart = nullptr;
 	sNode *nodeEnd = nullptr;
 
+
 public:
 	void Initialize();
 	void Update();
